@@ -1,0 +1,48 @@
+{
+  "name": "symbolfyi",
+  "version": "0.1.0",
+  "description": "Pure TypeScript symbol encoder -- 11 encoding formats for any Unicode character. Zero dependencies.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "unicode",
+    "symbol",
+    "encoding",
+    "html-entity",
+    "css",
+    "utf8",
+    "utf16",
+    "url-encoding",
+    "javascript-escape",
+    "python-escape",
+    "java-escape",
+    "codepoint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyipedia/symbolfyi-js"
+  },
+  "homepage": "https://symbolfyi.com",
+  "license": "MIT",
+  "author": "FYIPedia",
+  "devDependencies": {
+    "tsup": "^8.0",
+    "typescript": "^5.7",
+    "vitest": "^3.0"
+  }
+}

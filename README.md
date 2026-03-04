@@ -3,9 +3,11 @@
 Pure TypeScript symbol encoder -- 11 encoding formats for any Unicode character. Zero dependencies.
 
 [![npm version](https://img.shields.io/npm/v/symbolfyi)](https://www.npmjs.com/package/symbolfyi)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://www.npmjs.com/package/symbolfyi)
 
-Part of the [FYIPedia](https://fyipedia.com) open-source ecosystem. TypeScript port of the Python [`symbolfyi`](https://pypi.org/project/symbolfyi/) package.
+Part of the [FYIPedia](https://github.com/fyipedia) open-source ecosystem. TypeScript port of the Python [`symbolfyi`](https://pypi.org/project/symbolfyi/) package.
 
 ## Features
 
@@ -155,7 +157,7 @@ enc.utf16Bytes  // "d8 3d de 00"
 
 ## FYIPedia Developer Tools
 
-Part of the [FYIPedia](https://fyipedia.com/) open-source developer tools ecosystem:
+Part of the [FYIPedia](https://github.com/fyipedia) open-source developer tools ecosystem:
 
 | Package | Description |
 |---------|-------------|
@@ -172,4 +174,4 @@ Part of the [FYIPedia](https://fyipedia.com/) open-source developer tools ecosys
 
 ## License
 
-MIT -- [FYIPedia](https://fyipedia.com)
+MIT -- [FYIPedia](https://github.com/fyipedia)

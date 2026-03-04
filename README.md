@@ -152,7 +152,23 @@ enc.utf16Bytes  // "d8 3d de 00"
 
 - **Python**: [`pip install symbolfyi`](https://pypi.org/project/symbolfyi/) -- the original package with `unicodedata` integration
 - **Web**: [symbolfyi.com](https://symbolfyi.com) -- look up any symbol's encodings online
-- **Ecosystem**: [colorfyi](https://www.npmjs.com/package/colorfyi) | [emojifyi](https://www.npmjs.com/package/emojifyi) | [unicodefyi](https://www.npmjs.com/package/unicodefyi) | [fontfyi](https://www.npmjs.com/package/fontfyi)
+
+## FYIPedia Developer Tools
+
+Part of the [FYIPedia](https://fyipedia.com/) open-source developer tools ecosystem:
+
+| Package | Description |
+|---------|-------------|
+| [colorfyi](https://www.npmjs.com/package/colorfyi) | [Hex to RGB converter](https://colorfyi.com/tools/converter/), [WCAG contrast checker](https://colorfyi.com/tools/contrast-checker/), [color harmonies](https://colorfyi.com/tools/palette-generator/) |
+| [emojifyi](https://www.npmjs.com/package/emojifyi) | [Emoji encoding](https://emojifyi.com/developers/) & metadata for 3,781 Unicode emojis |
+| **symbolfyi** | [Symbol encoder](https://symbolfyi.com/developers/) -- 11 encoding formats for any character |
+| [unicodefyi](https://www.npmjs.com/package/unicodefyi) | [Unicode character lookup](https://unicodefyi.com/developers/) -- 17 encodings + character search |
+| [fontfyi](https://www.npmjs.com/package/fontfyi) | [Google Fonts explorer](https://fontfyi.com/developers/) -- metadata, CSS helpers, font pairings |
+| [distancefyi](https://www.npmjs.com/package/distancefyi) | Haversine distance, bearing, travel times -- [distancefyi.com](https://distancefyi.com/) |
+| [timefyi](https://www.npmjs.com/package/timefyi) | Timezone operations, time differences -- [timefyi.com](https://timefyi.com/) |
+| [namefyi](https://www.npmjs.com/package/namefyi) | Korean romanization, Five Elements -- [namefyi.com](https://namefyi.com/) |
+| [unitfyi](https://www.npmjs.com/package/unitfyi) | Unit conversion, 200 units, 20 categories -- [unitfyi.com](https://unitfyi.com/) |
+| [holidayfyi](https://www.npmjs.com/package/holidayfyi) | Holiday dates, Easter calculation -- [holidayfyi.com](https://holidayfyi.com/) |
 
 ## License
 

@@ -1,6 +1,6 @@
 {
   "name": "symbolfyi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pure TypeScript symbol encoder -- 11 encoding formats for any Unicode character. Zero dependencies.",
   "type": "module",
   "main": "dist/index.js",

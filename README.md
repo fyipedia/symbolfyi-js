@@ -161,7 +161,7 @@ Part of the [FYIPedia](https://github.com/fyipedia) open-source developer tools 
 
 | Package | Description |
 |---------|-------------|
-| [colorfyi](https://www.npmjs.com/package/colorfyi) | [Hex to RGB converter](https://colorfyi.com/tools/converter/), [WCAG contrast checker](https://colorfyi.com/tools/contrast-checker/), [color harmonies](https://colorfyi.com/tools/palette-generator/) |
+| [@fyipedia/colorfyi](https://www.npmjs.com/package/@fyipedia/colorfyi) | [Hex to RGB converter](https://colorfyi.com/tools/converter/), [WCAG contrast checker](https://colorfyi.com/tools/contrast-checker/), [color harmonies](https://colorfyi.com/tools/palette-generator/) |
 | [emojifyi](https://www.npmjs.com/package/emojifyi) | [Emoji encoding](https://emojifyi.com/developers/) & metadata for 3,781 Unicode emojis |
 | **symbolfyi** | [Symbol encoder](https://symbolfyi.com/developers/) -- 11 encoding formats for any character |
 | [unicodefyi](https://www.npmjs.com/package/unicodefyi) | [Unicode character lookup](https://unicodefyi.com/developers/) -- 17 encodings + character search |

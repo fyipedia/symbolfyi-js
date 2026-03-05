@@ -18,6 +18,10 @@ Part of the [FYIPedia](https://github.com/fyipedia) open-source ecosystem. TypeS
 - [Features](#features)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
+- [What You Can Do](#what-you-can-do)
+  - [Symbol Encoding](#symbol-encoding)
+  - [Unicode Properties](#unicode-properties)
+  - [HTML Entity Lookup](#html-entity-lookup)
 - [API Reference](#api-reference)
 - [Encoding Formats](#encoding-formats)
 - [Supplementary Plane Support](#supplementary-plane-support)
@@ -69,6 +73,94 @@ info?.codepoint     // 36
 lookupHtmlEntity("&hearts;")  // "♥"
 lookupHtmlEntity("amp")       // "&"
 ```
+
+## What You Can Do
+
+### Symbol Encoding
+
+Encode any Unicode character into **11 different representations** for use in HTML, CSS, JavaScript, Python, Java, and more. The encoder handles both BMP characters (U+0000-U+FFFF) and supplementary plane characters (U+10000+, including emoji) with correct surrogate pair encoding where needed.
+
+| # | Format | BMP Example (`→`) | Supplementary Example (`U+1F600`) | Use Case |
+|---|--------|-------------------|----------------------------------|----------|
+| 1 | **Unicode** | `U+2192` | `U+1F600` | Documentation, character charts |
+| 2 | **HTML Decimal** | `&#8594;` | `&#128512;` | HTML content (numeric reference) |
+| 3 | **HTML Hex** | `&#x2192;` | `&#x1F600;` | HTML content (hex reference) |
+| 4 | **HTML Entity** | `&rarr;` | *(none)* | HTML shorthand (51 common entities) |
+| 5 | **CSS** | `\2192` | `\1F600` | CSS `content` property |
+| 6 | **JavaScript** | `\u{2192}` | `\u{1F600}` | ES6+ string literals |
+| 7 | **Python** | `\u2192` | `\U0001f600` | Python string escapes |
+| 8 | **Java** | `\u2192` | `\uD83D\uDE00` | Java (surrogate pairs for U+10000+) |
+| 9 | **UTF-8 Bytes** | `e2 86 92` | `f0 9f 98 80` | Network protocols, file I/O |
+| 10 | **UTF-16 Bytes** | `21 92` | `d8 3d de 00` | Windows APIs, Java internals |
+| 11 | **URL Encoded** | `%E2%86%92` | `%F0%9F%98%80` | URLs, query strings |
+
+```typescript
+import { getEncodings } from "symbolfyi";
+
+// Encode the rightwards arrow into all 11 formats
+const enc = getEncodings("\u2192");
+console.log(enc.unicode);      // "U+2192"
+console.log(enc.htmlEntity);   // "&rarr;"
+console.log(enc.css);          // "\\2192"
+console.log(enc.javascript);   // "\\u{2192}"
+console.log(enc.utf8Bytes);    // "e2 86 92"
+console.log(enc.urlEncoded);   // "%E2%86%92"
+```
+
+Learn more: [Symbol Encoder](https://symbolfyi.com/search/) · [HTML Entity Collections](https://symbolfyi.com/collection/) · [Unicode Blocks](https://symbolfyi.com/block/)
+
+### Unicode Properties
+
+Every Unicode character belongs to one of **30 general categories** (e.g., "Math Symbol", "Currency Symbol", "Uppercase Letter"). The `getInfo()` function returns the character's codepoint, category, human-readable category name, and all 11 encodings.
+
+| Category Code | Category Name | Example Characters |
+|--------------|---------------|-------------------|
+| `Lu` | Uppercase Letter | A, B, C, ..., Z |
+| `Ll` | Lowercase Letter | a, b, c, ..., z |
+| `Nd` | Decimal Number | 0, 1, 2, ..., 9 |
+| `Sm` | Math Symbol | +, =, <, >, ~ |
+| `Sc` | Currency Symbol | $, EUR, GBP, JPY |
+| `So` | Other Symbol | (C), (R), (TM), ... |
+| `Ps` | Open Punctuation | (, [, { |
+| `Pe` | Close Punctuation | ), ], } |
+
+```typescript
+import { getInfo, getCategoryName } from "symbolfyi";
+
+// Get full Unicode properties for any character
+const info = getInfo("$");
+console.log(info?.codepoint);      // 36
+console.log(info?.category);       // "Sc"
+console.log(info?.categoryName);   // "Currency Symbol"
+console.log(info?.encodings.htmlHex);  // "&#x24;"
+
+// Look up category names
+console.log(getCategoryName("Sm"));  // "Math Symbol"
+console.log(getCategoryName("Lu"));  // "Uppercase Letter"
+console.log(getCategoryName("Nd"));  // "Decimal Number"
+```
+
+Learn more: [Unicode Category Reference](https://symbolfyi.com/glossary/) · [Unicode Blocks](https://symbolfyi.com/block/) · [REST API Docs](https://symbolfyi.com/developers/)
+
+### HTML Entity Lookup
+
+Resolve **51 common HTML named entities** back to their characters. Accepts bare names (`amp`), `&`-prefixed (`&amp`), or full format (`&amp;`).
+
+```typescript
+import { lookupHtmlEntity, HTML_ENTITIES, HTML_ENTITY_TO_CHAR } from "symbolfyi";
+
+// Reverse lookup: entity name to character
+console.log(lookupHtmlEntity("&hearts;"));  // "heart character"
+console.log(lookupHtmlEntity("amp"));       // "&"
+console.log(lookupHtmlEntity("&rarr;"));    // "rightwards arrow"
+console.log(lookupHtmlEntity("unknown"));   // null
+
+// Direct data access
+console.log(HTML_ENTITIES[0x2192]);           // "rarr"
+console.log(HTML_ENTITY_TO_CHAR["rarr"]);     // "rightwards arrow character"
+```
+
+Learn more: [HTML Entity Reference](https://symbolfyi.com/collection/) · [Math Symbols](https://symbolfyi.com/collection/math/) · [Currency Symbols](https://symbolfyi.com/collection/currency/)
 
 ## API Reference
 

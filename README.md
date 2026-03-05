@@ -9,6 +9,10 @@ Pure TypeScript symbol encoder -- 11 encoding formats for any Unicode character.
 
 Part of the [FYIPedia](https://github.com/fyipedia) open-source ecosystem. TypeScript port of the Python [`symbolfyi`](https://pypi.org/project/symbolfyi/) package.
 
+<p align="center">
+  <img src="demo.gif" alt="symbolfyi demo — symbol encoding and Unicode lookup" width="800">
+</p>
+
 ## Features
 
 - **11 encoding formats** for any Unicode character (BMP + supplementary plane)
